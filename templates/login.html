@@ -1,0 +1,73 @@
+{%extends "Base.html" %} 
+  {% block content %}
+  <link
+    rel="stylesheet" href="../static/style/login.css" type="text/css" media="all"/>
+
+  <div class="login-background">
+    <!-- Left Img -->
+    <div class="side-image left-image">
+      <img src="../static/img/ImgLeft.png" alt="Image décorative gauche" />
+    </div>
+
+    <!-- Card Container -->
+    <div class="card-container">
+      <div class="card" id="auth-card">
+        <div class="card-face card-front">
+          <!-- Login Box -->
+          <div class="login-box" id="login-box">
+            <h2 class="h2-login">Connexion</h2>
+            <form id="loginForm">
+              <label for="username">Pseudo :</label>
+              <input type="text" id="username" name="username" required />
+
+              <label for="password">Mot de passe :</label>
+              <input type="password" id="password" name="password" required />
+
+              <button type="submit">Se connecter</button>
+            </form>
+            <div id="errorMessage" class="error-message"></div>
+            <div class="create-account-link">
+              <p>Pas encore de compte? <button id="showRegisterBtn" class="link-button">Créer un compte</button></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-face card-back">
+          <!-- Register Box -->
+          <div class="login-box" id="register-box">
+            <h2 class="h2-login">Créer un compte</h2>
+            <form id="registerForm">
+              <label for="reg-username">Pseudo :</label>
+              <input type="text" id="reg-username" name="username" required />
+              <div id="username-availability" class="field-message"></div>
+
+              <label for="reg-email">Email :</label>
+              <input type="email" id="reg-email" name="email" required />
+
+              <label for="reg-password">Mot de passe :</label>
+              <input type="password" id="reg-password" name="password" required />
+
+              <label for="reg-confirm-password">Confirmer le mot de passe :</label>
+              <input type="password" id="reg-confirm-password" name="confirmPassword" required />
+              <div id="password-match" class="field-message"></div>
+
+              <button type="submit" id="register-submit-btn">Créer un compte</button>
+            </form>
+            <div id="registerMessage" class="error-message"></div>
+            <div class="back-to-login-link">
+              <p>Déjà un compte? <button id="showLoginBtn" class="link-button">Se connecter</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Img -->
+    <div class="side-image right-image">
+      <img src="../static/img/ImgRight.png" alt="Image décorative droite" />
+    </div>
+  </div>
+  <script src="../static/js/login.js"></script>
+  <script src="../static/js/toggleForms.js"></script>
+  <script src="../static/js/add.js"></script>
+  {% endblock %}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serveur d'Échecs - Client Web</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #log {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 5px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin-top: 20px;
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .chat-area {
+            margin-top: 20px;
+        }
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Client WebSocket - Serveur d'Échecs</h1>
+        
+        <div class="form-group">
+            <label for="server">Adresse du serveur :</label>
+            <input id="server" value="ws://127.0.0.1:3030/ws" placeholder="ws://localhost:3030/ws">
+        </div>
+
+        <div class="form-group">
+            <label for="room">Room :</label>
+            <input id="room" value="test" placeholder="Nom de la salle">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Nom du joueur :</label>
+            <input id="name" value="Alice" placeholder="Votre nom">
+        </div>
+
+        <button id="connectBtn" onclick="connectWS()">Connexion</button>
+
+        <div class="controls">
+            <h3>🔧 Contrôles de test</h3>
+            <button onclick="testMove1()">Test Coup 1 (e2→e4)</button>
+            <button onclick="testMove2()">Test Coup 2 (e7→e5)</button>
+        </div>
+
+        <div class="chat-area">
+            <h3>💬 Chat</h3>
+            <div class="chat-input">
+                <input id="chatInput" placeholder="Tapez votre message..." disabled>
+                <button id="sendChatBtn" onclick="sendChat()" disabled>Envoyer</button>
+            </div>
+        </div>
+
+        <h3>📋 Console</h3>
+        <pre id="log"></pre>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>

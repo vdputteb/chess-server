@@ -1,0 +1,112 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<div class="account-container">
+    <!-- Section profil -->
+    <link rel="stylesheet" href="/static/style/account.css" type="text/css" media="all"/>
+    <div class="profile-section">
+        <div class="profile-header">
+            <div class="profile-picture-container">
+                <img id="profile-picture" src="/profile-picture/Joueur123" alt="Photo de profil" class="profile-picture">
+                <form id="upload-form" enctype="multipart/form-data" style="display: none;">
+                    <input type="file" id="picture-upload" name="image" accept="image/*">
+                    <input type="hidden" id="username-input" name="username">
+                </form>
+                <button id="change-picture-btn" class="btn-change-picture">Changer la photo</button>
+            </div>
+            
+            <div class="profile-info">
+                <h1 id="username-display">Invité</h1>
+                <div class="info-item">
+                    <strong>Email:</strong>
+                    <span id="email-display">joueur@example.com</span>
+                </div>
+                <div class="info-item">
+                    <strong>Date de création:</strong>
+                    <span id="creation-date-display">01/01/2023</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section modification des informations -->
+    <div class="edit-section">
+        <h2>Modifier mes informations</h2>
+        <form id="edit-form" class="edit-form">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" name="username" class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="current-password">Mot de passe actuel:</label>
+                <input type="password" id="current-password" name="current-password" class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="new-password">Nouveau mot de passe:</label>
+                <input type="password" id="new-password" name="new-password" class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirmer le nouveau mot de passe:</label>
+                <input type="password" id="confirm-password" name="confirm-password" class="form-input">
+            </div>
+            
+            <button type="submit" class="btn-save">Enregistrer les modifications</button>
+            <div id="form-message" class="form-message"></div>
+        </form>
+    </div>
+
+    <!-- Section historique des parties -->
+    <div class="history-section">
+        <h2>Historique des parties</h2>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-value" id="total-games">0</span>
+                <span class="stat-label">Parties totales</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="wins">0</span>
+                <span class="stat-label">Victoires</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="losses">0</span>
+                <span class="stat-label">Défaites</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="draws">0</span>
+                <span class="stat-label">Nulles</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="win-rate">0%</span>
+                <span class="stat-label">Taux de victoire</span>
+            </div>
+        </div>
+        
+        <div class="games-history">
+            <table id="games-table" class="games-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Adversaire</th>
+                        <th>Résultat</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody id="games-tbody">
+                    <!-- Les parties seront ajoutées dynamiquement ici -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/account.js"></script>
+{% endblock %}

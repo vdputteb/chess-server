@@ -1,0 +1,31 @@
+[package]
+name = "chess-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7", features = ["ws", "json", "multipart"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+tokio-tungstenite = "0.21"
+futures = "0.3"
+dashmap = "5.0"
+tower = "0.5"
+askama = { version = "0.12", features = ["with-axum"] }
+askama_axum = "0.4"
+sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio-rustls", "chrono"] }
+tokio-stream = "0.1"
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+# Pour le hash 
+aes-gcm = "0.10" # Pour le chiffrement
+hex = "0.4"
+rand = "0.8"
+dotenvy = "0.15"
+hmac = "0.12"
+sha2 = "0.10"
+axum-extra = { version = "0.9", features = ["cookie"] }
+cookie = { version = "0.18", features = ["percent-encode"] }
+tower-cookies = "0.11"

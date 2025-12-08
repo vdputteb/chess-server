@@ -1,0 +1,325 @@
+.account-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section profil */
+.profile-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.profile-picture-container {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.btn-change-picture {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-change-picture:hover {
+    background: #5a6268;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-info h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.info-item strong {
+    color: #555;
+    margin-right: 10px;
+}
+
+/* Section modification */
+.edit-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.edit-form {
+    max-width: 500px;
+    width: 100%;
+}
+
+.edit-section h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btn-save {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-save:hover {
+    background: #0056b3;
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Section historique */
+.history-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.history-section h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.games-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.games-table th,
+.games-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.games-table th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.games-table tr:hover {
+    background: #f5f5f5;
+}
+
+.games-table td:last-child {
+    text-align: center;
+}
+
+/* Classes pour les résultats des parties */
+.win {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.loss {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.draw {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* Style pour le formulaire d'upload */
+#upload-form {
+    display: none;
+}
+
+/* Animation de chargement pour l'image */
+.profile-picture {
+    transition: opacity 0.3s ease;
+}
+
+.profile-picture.loading {
+    opacity: 0.7;
+}
+
+/* Message de statut */
+.status-message {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.win {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.loss {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.draw {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.pending {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .games-table {
+        font-size: 14px;
+    }
+    
+    .games-table th,
+    .games-table td {
+        padding: 10px 5px;
+    }
+}
